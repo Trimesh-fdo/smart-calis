@@ -1,0 +1,9 @@
+.next/
+node_modules/
+.env.local
+.env.local.backup
+dist/
+build/
+coverage/
+.DS_Store
+.swc/

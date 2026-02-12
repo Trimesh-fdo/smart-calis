@@ -10,7 +10,7 @@ const apiClient = axios.create({
 });
 
 // Add token to requests if available
-apiClient.interceptors.request.use((config) => {
+apiClient.interceptors.request.use((config: any) => {
   if (typeof window !== 'undefined') {
     const token = localStorage.getItem('token');
     if (token) {
@@ -22,8 +22,8 @@ apiClient.interceptors.request.use((config) => {
 
 // Handle responses
 apiClient.interceptors.response.use(
-  (response) => response,
-  (error) => {
+  (response: any) => response,
+  (error: any) => {
     if (error.response?.status === 401) {
       // Handle unauthorized - clear token and redirect to login
       if (typeof window !== 'undefined') {
